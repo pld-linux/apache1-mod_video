@@ -3,7 +3,7 @@ Summary:	Shows images grabbed from a v4l device
 Summary(pl):	Wy¶wietla obrazy zrzucone z urz±dzenia v4l
 Name:		apache-mod_%{mod_name}
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
