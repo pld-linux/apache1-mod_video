@@ -10,7 +10,6 @@ Group:		Networking/Daemons
 Source0:	http://borud.no/mod_video/download/mod_%{mod_name}-%{version}.tar.gz
 Patch0:		%{name}-webcam.patch
 URL:		http://modvideo.sourceforge.net/
-BuildRequires:	apache(EAPI)-devel
 BuildRequires:	zlib-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
@@ -35,7 +34,7 @@ API.
 %patch0 -p1
 
 %build
-%{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.so -lz -lpng -ljpeg
+%{apxs} -c mod_%{mod_name}.c -o mod_%{mod_name}.so -lpng -ljpeg
 
 %install
 rm -rf $RPM_BUILD_ROOT
