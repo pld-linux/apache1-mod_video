@@ -11,10 +11,10 @@ Source0:	http://borud.no/mod_video/download/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	c1def4425d597596a1c4c5bb0f607085
 Patch0:		%{name}-webcam.patch
 URL:		http://modvideo.sourceforge.net/
-BuildRequires:	zlib-devel
-BuildRequires:	libpng-devel
-BuildRequires:	libjpeg-devel
 BuildRequires:	%{apxs}
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	zlib-devel
 Prereq:		%{_sbindir}/apxs
 Requires:	apache
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,9 +39,8 @@ API.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_pkglibdir}
 
-install mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
+install -D mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
