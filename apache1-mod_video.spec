@@ -15,7 +15,7 @@ BuildRequires:	%{apxs}
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	zlib-devel
-Prereq:		%{_sbindir}/apxs
+Requires(post,preun):	%{apxs}
 Requires:	apache
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +40,7 @@ API.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -D mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
+install -D mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}/mod_%{mod_name}.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
