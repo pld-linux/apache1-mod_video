@@ -30,7 +30,7 @@ Pakiet ten zawiera modu³ do Apache umo¿liwiajacey serwowanie zdjêæ
 bezpo¶rednio generowanych z kamer obs³ugiwanych poprzez video4linux
 API.
 
-%prep 
+%prep
 %setup -q -n mod_%{mod_name}-%{version}
 %patch0 -p1
 
