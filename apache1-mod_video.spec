@@ -9,7 +9,7 @@ License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://borud.no/mod_video/download/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	c1def4425d597596a1c4c5bb0f607085
-Patch0:		apache-mod_video-webcam.patch
+Patch0:		%{name}-webcam.patch
 URL:		http://modvideo.sourceforge.net/
 BuildRequires:	%{apxs}
 BuildRequires:	libjpeg-devel
