@@ -9,10 +9,9 @@ Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
 Group(pl):	Sieciowe/Serwery
 Source0:	http://borud.no/mod_video/download/mod_%{mod_name}-%{version}.tar.gz
-Patch0:		apache-mod_%{mod_name}-webcam.patch
+Patch0:		%{name}-webcam.patch
 URL:		http://modvideo.sourceforge.net/
-BuildRequires:	/usr/sbin/apxs
-BuildRequires:	apache-devel
+BuildRequires:	apache(EAPI)-devel
 BuildRequires:	zlib-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libjpeg-devel
@@ -23,15 +22,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_pkglibdir	%(/usr/sbin/apxs -q LIBEXECDIR)
 
 %description
+This package contain an Apache module for serving snapshots from the
+video4linux API.
 
 %description -l pl
+Pakeit ten zawiera modu³ do Apache umo¿liwiajacey serwowanie zdjêæ
+bezpo¶rednio generowanych z kamer obs³ugiwanych poprzez video4linux
+API.
 
 %prep 
 %setup -q -n mod_%{mod_name}-%{version}
 %patch0 -p1
 
 %build
-/usr/sbin/apxs -c mod_%{mod_name}.c -o mod_%{mod_name}.so -lz -lpng -ljpeg
+apxs -c mod_%{mod_name}.c -o mod_%{mod_name}.so -lz -lpng -ljpeg
 
 %install
 rm -rf $RPM_BUILD_ROOT
