@@ -22,11 +22,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_pkglibdir	%(/usr/sbin/apxs -q LIBEXECDIR)
 
 %description
-This package contain an Apache module for serving snapshots from the
+This package contains an Apache module for serving snapshots from the
 video4linux API.
 
 %description -l pl
-Pakeit ten zawiera modu³ do Apache umo¿liwiajacey serwowanie zdjêæ
+Pakiet ten zawiera modu³ do Apache umo¿liwiajacey serwowanie zdjêæ
 bezpo¶rednio generowanych z kamer obs³ugiwanych poprzez video4linux
 API.
 
@@ -43,6 +43,9 @@ install -d $RPM_BUILD_ROOT%{_pkglibdir}
 
 install mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /usr/sbin/apxs -e -a -n %{mod_name} %{_pkglibdir}/mod_%{mod_name}.so 1>&2
 if [ -f /var/lock/subsys/httpd ]; then
@@ -56,9 +59,6 @@ if [ "$1" = "0" ]; then
 		/etc/rc.d/init.d/httpd restart 1>&2
 	fi
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
