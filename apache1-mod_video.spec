@@ -25,7 +25,7 @@ This package contains an Apache module for serving snapshots from the
 video4linux API.
 
 %description -l pl
-Pakiet ten zawiera modu³ do Apache umo¿liwiajacey serwowanie zdjêæ
+Pakiet ten zawiera modu³ do Apache umo¿liwiaj±cy serwowanie zdjêæ
 bezpo¶rednio generowanych z kamer obs³ugiwanych poprzez video4linux
 API.
 
