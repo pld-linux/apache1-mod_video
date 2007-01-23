@@ -4,7 +4,7 @@ Summary:	Shows images grabbed from a v4l device
 Summary(pl):	Wy¶wietla obrazy zrzucone z urz±dzenia v4l
 Name:		apache1-mod_%{mod_name}
 Version:	0.1.0
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://borud.no/mod_video/download/mod_%{mod_name}-%{version}.tar.gz
@@ -18,7 +18,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	zlib-devel
 Requires(triggerpostun):	%{apxs}
-Requires:	apache1 >= 1.3.33-2
+Requires:	apache1(EAPI)
 Obsoletes:	apache-mod_video <= 0.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
