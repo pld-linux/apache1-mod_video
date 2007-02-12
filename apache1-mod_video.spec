@@ -1,7 +1,7 @@
 %define		mod_name	video
 %define 	apxs		/usr/sbin/apxs1
 Summary:	Shows images grabbed from a v4l device
-Summary(pl):	Wy¶wietla obrazy zrzucone z urz±dzenia v4l
+Summary(pl.UTF-8):   WyÅ›wietla obrazy zrzucone z urzÄ…dzenia v4l
 Name:		apache1-mod_%{mod_name}
 Version:	0.1.0
 Release:	3
@@ -29,9 +29,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package contains an Apache module for serving snapshots from the
 video4linux API.
 
-%description -l pl
-Pakiet ten zawiera modu³ do Apache umo¿liwiaj±cy serwowanie zdjêæ
-bezpo¶rednio generowanych z kamer obs³ugiwanych poprzez video4linux
+%description -l pl.UTF-8
+Pakiet ten zawiera moduÅ‚ do Apache umoÅ¼liwiajÄ…cy serwowanie zdjÄ™Ä‡
+bezpoÅ›rednio generowanych z kamer obsÅ‚ugiwanych poprzez video4linux
 API.
 
 %prep
