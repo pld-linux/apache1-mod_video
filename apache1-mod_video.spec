@@ -1,7 +1,7 @@
 %define		mod_name	video
 %define 	apxs		/usr/sbin/apxs1
 Summary:	Shows images grabbed from a v4l device
-Summary(pl.UTF-8):   Wyświetla obrazy zrzucone z urządzenia v4l
+Summary(pl.UTF-8):	Wyświetla obrazy zrzucone z urządzenia v4l
 Name:		apache1-mod_%{mod_name}
 Version:	0.1.0
 Release:	3
